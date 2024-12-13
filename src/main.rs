@@ -72,5 +72,5 @@ fn handle_add(
     // Append the rest of the original WASM file
     result.extend_from_slice(&wasm_bytes[8..]);
 
-    std::fs::write(output, wasm_bytes).expect("Failed to write output file");
+    std::fs::write(output, result).expect("Failed to write output file");
 }
