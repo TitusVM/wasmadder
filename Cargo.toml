@@ -1,6 +1,6 @@
 [package]
 name = "wasmadder"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 license = "MIT OR Apache-2.0"
 description = "A CLI Tool for modifying WebAssembly binaries"
@@ -10,5 +10,8 @@ readme = "README.md"
 categories = ["command-line-utilities"]
 
 [dependencies]
+anyhow = "1.0.94"
 clap = "4.5.23"
+miniz_oxide = "0.8.0"
 wasm-gen = "0.1.4"
+wasmparser = "0.221.2"
