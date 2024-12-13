@@ -63,10 +63,8 @@ fn handle_add(
     let wasm_bytes = std::fs::read(input).expect("Failed to read input file");
     let data_bytes = std::fs::read(data).expect("Failed to read data file");
     
-    // Start with the minimum valid WASM file
     let mut result: Vec<u8> = wasm_bytes[..8].to_vec();
     let compressed_data = miniz_oxide::deflate::compress_to_vec_zlib(&data_bytes, 7);
-
     wasm_gen::write_custom_section(&mut result, section, &compressed_data);
 
     // Append the rest of the original WASM file
